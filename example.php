@@ -1,6 +1,6 @@
 <?php
 
-require(__DIR__."/thepb.php");
+require(__DIR__."/lib/thepb.php");
 
 //Getting array of languages (once every 60 seconds)
 print_r(thepb::getLangs());
