@@ -1,0 +1,33 @@
+#!/usr/bin/php
+<?php
+
+// Simple example for pasting via cli in linux. put it in a bin somewhere
+// examples:
+//   echo "This is a paste sent by cli in linux with the language plain" | thepb-cli
+//   echo "This is a paste sent by cli in linux with the language php" | thepb-cli php
+
+require(__DIR__."/lib/thepb.php");
+
+$lang = "plain";
+
+// Check for a language
+if (count($argv) > 1) {
+        $lang = $argv[1];
+}
+
+$data = file_get_contents("php://stdin");
+
+$res = thepb::post([
+        'apikey'        => 'UUIDv4 key',
+        'lang'          => $lang,
+        'private'       => true
+], $data);
+
+if (array_key_exists("error", $res)) {
+        echo "Error: " . $res['message'] . PHP_EOL;
+}
+else {
+        echo "Pasted: " . $res['link'] . PHP_EOL;
+}
+
+?>
