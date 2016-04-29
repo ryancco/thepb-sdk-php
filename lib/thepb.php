@@ -102,7 +102,7 @@ class thepb {
             if ($isPost) {
                 $options = array(
                     'http'  => array(
-                        'header'    => 'Content-type: application/x-www-form-urlencoded\r\n',
+                        'header'    => "Content-type: application/x-www-form-urlencoded\r\n",
                         'method'    => 'POST',
                         'content'   => $fields
                     )
