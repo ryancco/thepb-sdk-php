@@ -8,7 +8,7 @@ namespace ThePB\Library {
          * Base end point for all API requests
          * @var string
          */
-        private $baseUrl = 'https://api-sandbox.thepb.in/v1';
+        private $baseUrl = 'https://api.thepb.in/v1';
 
         /**
          * Key used for identifying with the API
