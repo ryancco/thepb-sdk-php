@@ -4,9 +4,6 @@ namespace ThePB\Library {
 
     use \ThePB\Library\Utilities\Visibility;
 
-    include_once 'Language.php';
-    include_once 'Visibility.php';
-
     final class Paste
     {
         /**
@@ -132,13 +129,13 @@ namespace ThePB\Library {
         final private function validate()
         {
             if ($this->getContent() == null) {
-                throw new Exception('Missing content exception');
+                throw new \Exception('Missing content exception');
             }
             if (!Language::validate($this->getLanguage())) {
-                throw new Exception('Invalid language exception');
+                throw new \Exception('Invalid language exception');
             }
             if (!Visibility::validate($this->getVisibility())) {
-                throw new Exception('Invalid visibility exception');
+                throw new \Exception('Invalid visibility exception');
             }
         }
     }

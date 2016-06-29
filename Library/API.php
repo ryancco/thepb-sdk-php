@@ -132,10 +132,10 @@ namespace ThePB\Library {
                     $error        = $this->results->error;
                     $message      = $this->results->message;
                     $effectiveUrl = curl_getinfo($this->ch, CURLINFO_EFFECTIVE_URL);
-                    throw new Exception("[ $effectiveUrl ] ($statusCode) $error - $message");
+                    throw new \Exception("[ $effectiveUrl ] ($statusCode) $error - $message");
                     break;
                 default:
-                    throw new Exception("Uh-oh... An unexpected error has occurred (HTTP $httpCode).");
+                    throw new \Exception("Uh-oh... An unexpected error has occurred (HTTP $httpCode).");
                     break;
             }
         }
