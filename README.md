@@ -10,7 +10,7 @@ An SDK for interacting with the TheP(aste)B.in API, using PHP.
 
 The below is a basic example of creating a new post on TheP(aste)b.in
 ```php
-require 'ThePB.php';
+require 'thepb-sdk-php/ThePB.php';
 
 use \ThePB\Library\Paste;
 use \ThePB\Library\Utilities\Visibility;
