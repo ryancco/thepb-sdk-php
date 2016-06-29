@@ -1,29 +1,33 @@
 <?php
 
-require(__DIR__."/lib/thepb.php");
+// Create a post
+include_once '/lib/Paste.php';
+include_once '/lib/Visibility.php';
 
-//Getting array of languages (once every 60 seconds)
-print_r(thepb::getLangs());
+$paste = new Paste;
+$paste->setContent("This is paste content! It isn't 30 characters long though so let's add a little!");
+$submit = $paste->submit("73efd6bd-6ea4-44bd-0000-000000000000");
+$id     = $submit->id;
+$url    = $submit->link;
+print_r($submit);
 
-//Validating API Key (once every 60 seconds)
-print_r(thepb::validateKey('UUIDv4 key'));
+// View a post
+include_once '/lib/View.php';
 
-$data = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+$view = new View;
+$post = $view->byPostId("73efd6bd-6ea4-44bd-0000-000000000000", $id);
+print_r($post);
 
-//Pasting something with static method
-print_r(thepb::post([
-	'apikey'	=> 'UUIDv4 key', // required
-	'lang'		=> 'php', // optional (default plain)
-	'private'	=> true // optional (default false)
-], $data));
+// Oembed
+include_once '/lib/Oembed.php';
 
+$oembed   = new Oembed;
+$response = $oembed->generate($link);
+print_r($response);
 
-//Pasting something with an object
-$paste = new thepb();
-$paste->setKey('UUIDv4 key'); // required
-$paste->setLang('php'); // optional
-$paste->private = true; // Accepts any truthy or falsey value. optional.
-$paste->data = $data;
-print_r($paste->send());
+// Server status
+include_once '/lib/Status.php';
 
-?>
+$status = new Status;
+print_r($status->getStatus());
+print_r($status->getNodeStatus());
