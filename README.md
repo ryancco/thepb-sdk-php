@@ -2,7 +2,7 @@
 An SDK for interacting with the [TheP(aste)B.in API], using [PHP].
 
 Examples
--
+---
 The below is a basic example of creating a new post on [TheP(aste)B.in]
 ```php
 require 'thepb-sdk-php/ThePB.php';
@@ -36,17 +36,17 @@ echo $response->link;
 ```
 
 API Key:
--
+---
 The API is currently in BETA. If you would like the opportunity to help test and develop this please feel free to [contact us]! The [API Sandbox] is open to the public; feel free to use it!
 
 Contributors
--
+---
 * [@jdarmst](https://github.com/jdarmst)
 * [@LouisT](https://github.com/LouisT) - https://lou.ist/
 * [@ryancco](https://github.com/ryancco)
 
 License
--
+---
 Copyright (c) 2016, ThePasteBin ([MIT License]).
 
 
