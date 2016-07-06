@@ -1,14 +1,9 @@
-# ThePB
-An SDK for interacting with the TheP(aste)B.in API, using PHP.
+# thepb-sdk-php
+An SDK for interacting with the [TheP(aste)B.in API], using [PHP].
 
-## Contributors
-@jdarmst
-@LouisT
-@ryancco
-
-## Examples
-
-The below is a basic example of creating a new post on TheP(aste)b.in
+Examples
+-
+The below is a basic example of creating a new post on [TheP(aste)B.in]
 ```php
 require 'thepb-sdk-php/ThePB.php';
 
@@ -39,3 +34,25 @@ try {
 // Output the link to the newly posted paste
 echo $response->link;
 ```
+
+API Key:
+-
+The API is currently in BETA. If you would like the opportunity to help test and develop this please feel free to [contact us]! The [API Sandbox] is open to the public; feel free to use it!
+
+Contributors
+-
+* [@jdarmst](https://github.com/jdarmst)
+* [@LouisT](https://github.com/LouisT) - https://lou.ist/
+* [@ryancco](https://github.com/ryancco)
+
+License
+-
+Copyright (c) 2016, ThePasteBin ([MIT License]).
+
+
+[PHP]: https://secure.php.net/
+[TheP(aste)B.in API]: https://api.thepb.in/
+[TheP(aste)B.in]: https://thepb.in/
+[contact us]: https://thepb.in/contact
+[MIT License]: LICENSE
+[API Sandbox]: https://api-sandbox.thepb.in/
